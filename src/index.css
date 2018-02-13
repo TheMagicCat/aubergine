@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+/*
+font-family: 'Raleway', sans-serif;
+font-family: 'Poiret One', cursive;
+*/
+
+/* Typescale.com */
+html {font-size: 1em;}
+
+body {
+  --primary-color: rgb(64,128,255);
+  background: url(./assets/squaroha.png);
+  font-family: Raleway, sans-serif;
+  font-weight: 300;
+  line-height: 1.45;
+  color: #000;
+}
+
+p {margin-bottom: 1.3em;}
+
+h1, h2, h3, h4 {
+  margin: 1.414em 0 0.5em;
+  font-family: 'Poiret One';
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.998em;
+}
+
+h2 {font-size: 2.827em;}
+
+h3 {font-size: 1.999em;}
+
+h4 {font-size: 1.414em;}
+
+small, .font_small {
+  color: #ccc;
+  font-size: 0.707em;
+}
+
+/* Custom */
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-flow: column nowrap;
+  padding: 1em;
+}
+
+.paper {
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1em;
+  max-width: 70em;
+  overflow: hidden;
+}
+
+button {
+  font-family: 'Poiret One';
+  font-weight: 600;
+  background: inherit;
+  border: 0;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  outline: none;
+  padding: 0.5em 1em;
+  color: var(--primary-color);
+  border-radius: 0.25em;
+}
+
+button:hover, button:focus {
+  background: rgba(63,127,255, 0.2);
+  /*animation: r 5s ease infinite;*/
+}
+
+button:active {
+  background: rgb(64,128,255);
+  color: white;
+  animation: none;
+}
+
+button:disabled {
+  color: #ccc;
+  background: none;
+  animation: none;
+}
+
+input[type=text] {
+  width: 100%;
+  background: none;
+  border: 0;
+  border-bottom: solid 1px #000;
+  outline: none;
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+  border-radius: 0;
+  font-family: Raleway, sans-serif;
+}
+
+input[type=text]:focus {
+  border-bottom-color: var(--primary-color);
+}
+
+label {
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+}
+
+.formInput {
+  padding: 0 1em 1em 0;
+  text-align: left;
+  flex: 1 0 auto;
+  margin: auto;
+}
+
+.formContainer {
+  display: flex;
+  flex-flow: row wrap;
+  margin: auto;
+  align-items: center;
+  max-width: 20em;
+}
+
+@keyframes r {
+  0% {
+    background-color: rgba(0,255,128, 0.2);
+  }
+  50% {
+    background-color: rgba(64,128,255, 0.2);
+  }
+  100% {
+    background-color: rgba(0,255,128, 0.2);
+  }
+}
+
+.sidebar {
+  background-color: rgba(255,255,255,0.9);
+  padding: 0 1em 0 1em;
+}
+
+.navigation {
+  text-align: center;
+}
+
+/*
+Inline Link Styles
+http://tympanus.net/Development/InlineAnchorStyles/
+*/
+
+section {
+	position: relative;
+	overflow: hidden;
+}
+
+section a {
+	position: relative;
+	display: inline-block;
+	outline: none;
+	vertical-align: bottom;
+	text-decoration: none;
+	white-space: nowrap;
+  overflow: visible;
+}
+
+section a::before,
+section a::after {
+	pointer-events: none;
+	backface-visibility: hidden;
+}
+
+/* Slide up */
+
+.link-slideup a {
+	color: rgb(64,128,255);
+  overflow: hidden;
+}
+
+.link-slideup a::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,255,128, 0.2);
+  /*animation: r 5s ease infinite;*/
+	content: '';
+	transition: transform 0.2s;
+	transform: translateY(95%);
+}
+
+.link-slideup a:hover::before,
+.link-slideup a:focus::before {
+	transform: translateY(0);
+}
+
+/*
+Link Effects
+http://tympanus.net/Development/CreativeLinkEffects/
+*/
+
+nav a {
+	position: relative;
+	display: block;
+	margin: 1em 1em;
+	outline: none;
+	color: #000;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+nav a:hover,
+nav a:focus {
+  color: rgb(64,128,255);
+	outline: none;
+  
+}
+
+/* Effect 1: Brackets */
+.cl-effect-1 a::before,
+.cl-effect-1 a::after {
+	display: inline-block;
+	opacity: 0;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1 a::before {
+	margin-right: 0.5em;
+	content: '[';
+	transform: translateX(1em);
+}
+
+.cl-effect-1 a::after {
+	margin-left: 0.5em;
+	content: ']';
+	transform: translateX(-1em);
+}
+
+.cl-effect-1 a:hover::before,
+.cl-effect-1 a:hover::after,
+.cl-effect-1 a:focus::before,
+.cl-effect-1 a:focus::after {
+	opacity: 1;
+	transform: translateX(0px);
+}
+
+.closeMenu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transform-origin: bottom left 0;
+  transform: translateY(-100%) rotate(90deg);
+  padding: 0.5em;
+  text-align: center;
+  color: rgb(64,128,255);
+  background: rgba(255, 255, 255, 0.9);
+}
